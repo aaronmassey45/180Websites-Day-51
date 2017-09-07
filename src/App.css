@@ -1,5 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
 .App {
   text-align: center;
+}
+
+body {
+  background-color: lightblue;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .drum-kit {
@@ -8,14 +14,28 @@
   -moz-box-shadow: 29px 13px 64px -3px rgba(0, 0, 0, 0.75);
   box-shadow: 29px 13px 64px -3px rgba(0, 0, 0, 0.75);
   padding: 15px;
+  margin: 15px;
+  border-radius: 25px;
+}
+
+.App:focus, .drum-kit:focus, #root:focus {
+  outline: 0 !important;
 }
 
 .Instrument {
   background-color: lightgrey;
   border: 1px solid black;
-  padding: 15px;
+  padding: 25px;
 }
 
 .navbar {
   border-radius: 0;
+}
+
+#viewer {
+  padding: 5px;
+  height: 50px;
+  color: white;
+  background-color: black;
+  border: 2px solid white;
 }
