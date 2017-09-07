@@ -2,6 +2,20 @@
   text-align: center;
 }
 
+.drum-kit {
+  background-color: grey;
+  -webkit-box-shadow: 29px 13px 64px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 29px 13px 64px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 29px 13px 64px -3px rgba(0, 0, 0, 0.75);
+  padding: 15px;
+}
+
+.Instrument {
+  background-color: lightgrey;
+  border: 1px solid black;
+  padding: 15px;
+}
+
 .navbar {
   border-radius: 0;
 }
