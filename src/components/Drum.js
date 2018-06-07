@@ -6,7 +6,7 @@ import { keys } from '../keysData';
 
 export default () => {
   return (
-    <Col sm={6} smOffset={3} className="Instruments">
+    <Col sm={6} smOffset={3}>
       <h2>
         {keys.map(instrument => {
           return (
