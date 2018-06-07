@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
-import { Col } from 'react-bootstrap'
+import { Col } from 'react-bootstrap';
 
-const keys = ['q', 'w', 'e', 'a', 's', 'd', 'z', 'x', 'c'];
-const sounds = ['Boing', 'Conk', 'Side Stick', 'Snare', 'Closed HH', 'Kick', 'Clap', 'Open HH', 'Kick n Hat'];
-
-export default class Instrument extends Component {
-  handleClick = () => {
-    if (keys.includes(this.props.letter)) {
-      const audio = document.getElementById(`${this.props.letter}audio`);
-      audio.play();
-      const index = keys.indexOf(this.props.letter);
-      document.getElementById("viewer").innerHTML = sounds[index];
-    }
-  }
-
+export default class extends Component {
   render() {
-    let { letter, src } = this.props;
+    const { key, src } = this.props.data;
     return (
-      <Col xs={4} className="Instrument" onClick={this.handleClick}>
-        <audio src={src} id={`${letter}audio`}></audio>
-        {letter}
+      <Col
+        xs={4}
+        className="drum-pad"
+        id={`${key}`}
+        onClick={() => this.refs.audio.play()}
+      >
+        <audio id={`${key}`} className="clip" src={src} ref="audio" />
+        {key}
       </Col>
     );
   }
