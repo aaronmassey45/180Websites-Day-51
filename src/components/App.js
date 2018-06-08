@@ -4,23 +4,28 @@ import Navbar from './navbar';
 import Drum from './Drum';
 
 export default class App extends Component {
-  // handleKeyPress = e => {
-  //   if (keys.includes(e.key)) {
-  //     const audio = document.getElementById(`${e.key}audio`);
-  //     audio.play();
-  //     const index = keys.indexOf(e.key);
-  //     document.getElementById('viewer').innerHTML = sounds[index];
-  //   }
-  // };
+  state = { text: '' };
+
+  componentDidMount() {
+    document.addEventListener('keydown', e => {
+      try {
+        const key = e.key.toUpperCase();
+        const audio = document.querySelector(`.${key}-sound`);
+        this.setState({ text: audio.dataset.target });
+        audio.play();
+      } catch (err) {
+        return;
+      }
+    });
+  }
+
+  updateViewer = sound => {
+    this.setState({ text: sound });
+  };
 
   render() {
     return (
-      <div
-        className="App"
-        onKeyPress={this.handleKeyPress}
-        tabIndex="0"
-        id="drum-machine"
-      >
+      <div className="App" id="drum-machine">
         <Navbar />
         <div className="container drum-kit">
           <Grid>
@@ -29,11 +34,11 @@ export default class App extends Component {
             </Row>
             <Row>
               <Col sm={8} smOffset={2}>
-                <h3 id="display"> </h3>
+                <h3 id="display">{this.state.text}</h3>
               </Col>
             </Row>
             <Row>
-              <Drum />
+              <Drum updateViewer={this.updateViewer} />
             </Row>
           </Grid>
         </div>
