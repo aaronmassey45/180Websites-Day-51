@@ -4,7 +4,7 @@ import { Col } from 'react-bootstrap';
 import Instrument from './instrument';
 import { keys } from '../keysData';
 
-export default () => {
+export default ({ updateViewer }) => {
   return (
     <Col sm={6} smOffset={3}>
       <h2>
@@ -12,8 +12,7 @@ export default () => {
           return (
             <Instrument
               key={instrument.key}
-              letter={instrument.key}
-              src={instrument.src}
+              updateViewer={updateViewer}
               data={{ ...instrument }}
             />
           );
