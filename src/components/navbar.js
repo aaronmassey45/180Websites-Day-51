@@ -1,26 +1,27 @@
 import React, { Component } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+const { Header, Brand, Toggle, Collapse, Link, Text } = Navbar;
 
-export default class NewNavbar extends Component {
+export default class extends Component {
   render() {
     return (
       <Navbar inverse collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="http://aaronmassey.pro/">The Aaron Massey Project</a>
-          </Navbar.Brand>
-          <Navbar.Toggle/>
-        </Navbar.Header>
-        <Navbar.Collapse>
+        <Header>
+          <Brand>
+            <a href="https://aaronmassey.pro/">The Aaron Massey Project</a>
+          </Brand>
+          <Toggle />
+        </Header>
+        <Collapse>
           <Nav pullRight>
-            <Navbar.Text>
-              <Navbar.Link href="https://medium.com/@aaronmassey45">Blog</Navbar.Link>
-            </Navbar.Text>
-            <Navbar.Text>
-              <Navbar.Link href="https://github.com/aaronmassey45">Github</Navbar.Link>
-            </Navbar.Text>
+            <Text>
+              <Link href="https://medium.com/@aaronmassey45">Blog</Link>
+            </Text>
+            <Text>
+              <Link href="https://github.com/aaronmassey45">Github</Link>
+            </Text>
           </Nav>
-        </Navbar.Collapse>
+        </Collapse>
       </Navbar>
     );
   }
